@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class = "container-fluid my-0 px-0">
+<img src="/static/img/contactus.PNG" class="d-block w-100" alt="...">
+<H1 class = "text-center">Contact Us 📞</H1>
+</div>
+<div class= "container my-6">
+    <form method = 'POST' action = "/contact">
+      {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Name</label>
+            <input type="text" class="form-control" name = "name" id="exampleInputname" placeholder = "Enter Your Name ">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name = "email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder = "Enter your Email Address">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" name = "phone" id="exampleInputPhonenumber" placeholder = "Enter your contact number">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tell me about what you want me to contact for...</label>
+            <input type="test" class="form-control" name = "desc" id="exampleInputdesc" placeholder = "Tell me about what you want me to contact for">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+{% endblock body %}
